@@ -1,0 +1,105 @@
+
+/* ---------------------------------------------------------
+   COLOSIEUM BRAND STYLESHEET
+--------------------------------------------------------- */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --brand-color-primary: #FFD200;
+  --brand-color-secondary: #E8EEE4;
+  --brand-bg: #F5F8F3;
+  --brand-text-body: #1d1d1b;
+  --brand-text-heading: #1d1d1b;
+
+  --brand-font-heading: 'Fjalla One', sans-serif;
+  --brand-font-body: 'Albert Sans', sans-serif;
+}
+
+/* Global */
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text-body);
+  font-family: var(--brand-font-body);
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--brand-text-heading);
+  font-family: var(--brand-font-heading);
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: var(--brand-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+button,
+.btn,
+.button,
+.button-primary {
+  background-color: var(--brand-color-primary);
+  color: #1d1d1b;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: var(--brand-font-heading);
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+.button-primary:hover {
+  filter: brightness(0.9);
+}
+
+/* Secondary buttons */
+.button-secondary {
+  background-color: var(--brand-color-secondary);
+  color: var(--brand-text-body);
+  font-family: var(--brand-font-body);
+  font-weight: 600;
+}
+
+/* Forms */
+input,
+select,
+textarea {
+  background-color: #fff;
+  border: 1px solid var(--brand-color-secondary);
+  color: var(--brand-text-body);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-family: var(--brand-font-body);
+  font-weight: 600;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--brand-color-primary);
+}
+
+/* Cards */
+.card,
+.panel,
+.section-box {
+  background-color: #fff;
+  border: 1px solid var(--brand-color-secondary);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
