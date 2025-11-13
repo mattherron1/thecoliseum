@@ -1,12 +1,13 @@
 /* ---------------------------------------------------------
    COLOSIEUM BRAND STYLESHEET
-   Hosted via GitHub and used by POS as external CSS
+   Hosted via GitHub/jsDelivr and used by POS as external CSS
 --------------------------------------------------------- */
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap');
 
+/* Brand variables */
 :root {
   --brand-color-primary: #FFD200;
   --brand-color-secondary: #E8EEE4;
@@ -14,92 +15,138 @@
   --brand-text-body: #1d1d1b;
   --brand-text-heading: #1d1d1b;
 
-  --brand-font-heading: 'Fjalla One', sans-serif;
-  --brand-font-body: 'Albert Sans', sans-serif;
+  --brand-font-heading: "Fjalla One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --brand-font-body: "Albert Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Global */
-body {
-  background-color: var(--brand-bg);
-  color: var(--brand-text-body);
-  font-family: var(--brand-font-body);
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
+/* ---------------------------------------------------------
+   GLOBAL TEXT & BACKGROUND (extra strong selectors)
+--------------------------------------------------------- */
+
+html,
+body,
+body * {
+  font-family: var(--brand-font-body) !important;
+  color: var(--brand-text-body) !important;
+}
+
+html,
+body,
+main,
+[class*="page"],
+[class*="Page"],
+[class*="container"],
+[class*="Container"] {
+  background-color: var(--brand-bg) !important;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--brand-text-heading);
-  font-family: var(--brand-font-heading);
-  font-weight: 700;
+h1, h2, h3, h4, h5, h6,
+[class*="title"],
+[class*="Title"],
+[class*="heading"],
+[class*="Heading"] {
+  font-family: var(--brand-font-heading) !important;
+  color: var(--brand-text-heading) !important;
+  font-weight: 700 !important;
 }
 
-/* Links */
-a {
-  color: var(--brand-color-primary);
-  text-decoration: none;
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+
+a,
+a span {
+  color: var(--brand-color-primary) !important;
+  text-decoration: none !important;
 }
 
-a:hover {
-  text-decoration: underline;
+a:hover,
+a:hover span {
+  text-decoration: underline !important;
 }
 
-/* Buttons */
+/* ---------------------------------------------------------
+   BUTTONS & CTAs
+--------------------------------------------------------- */
+
 button,
-.btn,
-.button,
-.button-primary {
-  background-color: var(--brand-color-primary);
-  color: #1d1d1b;
-  padding: 0.75rem 1.25rem;
-  border: none;
-  border-radius: 0.5rem;
+input[type="button"],
+input[type="submit"],
+[class*="btn"],
+[class*="Btn"],
+[class*="button"],
+[class*="Button"],
+[class*="cta"],
+[class*="Cta"] {
+  font-family: var(--brand-font-heading) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: var(--brand-color-primary) !important;
+  color: #1d1d1b !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 0.75rem 1.5rem !important;
   cursor: pointer;
-  font-weight: 700;
-  font-family: var(--brand-font-heading);
 }
 
 button:hover,
-.btn:hover,
-.button:hover,
-.button-primary:hover {
-  filter: brightness(0.9);
+input[type="button"]:hover,
+input[type="submit"]:hover,
+[class*="btn"]:hover,
+[class*="Btn"]:hover,
+[class*="button"]:hover,
+[class*="Button"]:hover,
+[class*="cta"]:hover,
+[class*="Cta"]:hover {
+  filter: brightness(0.9) !important;
 }
 
-/* Secondary buttons */
-.button-secondary {
-  background-color: var(--brand-color-secondary);
-  color: var(--brand-text-body);
-  font-family: var(--brand-font-body);
-  font-weight: 600;
+/* Secondary / subtle buttons */
+[class*="secondary"],
+[class*="Secondary"],
+[class*="ghost"],
+[class*="Ghost"] {
+  background-color: var(--brand-color-secondary) !important;
+  color: var(--brand-text-body) !important;
 }
 
-/* Forms */
+/* ---------------------------------------------------------
+   FORMS
+--------------------------------------------------------- */
+
 input,
 select,
 textarea {
-  background-color: #fff;
-  border: 1px solid var(--brand-color-secondary);
-  color: var(--brand-text-body);
-  padding: 0.5rem;
-  border-radius: 0.4rem;
-  font-family: var(--brand-font-body);
-  font-weight: 600;
+  background-color: #ffffff !important;
+  border: 1px solid var(--brand-color-secondary) !important;
+  color: var(--brand-text-body) !important;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 0.4rem !important;
+  font-family: var(--brand-font-body) !important;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid var(--brand-color-primary);
+  outline: 2px solid var(--brand-color-primary) !important;
+  outline-offset: 1px;
 }
 
-/* Cards */
+/* ---------------------------------------------------------
+   CARDS / PANELS
+--------------------------------------------------------- */
+
 .card,
 .panel,
-.section-box {
-  background-color: #fff;
-  border: 1px solid var(--brand-color-secondary);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
+[class*="card"],
+[class*="Card"],
+[class*="panel"],
+[class*="Panel"],
+[class*="box"],
+[class*="Box"] {
+  background-color: #ffffff !important;
+  border: 1px solid var(--brand-color-secondary) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.25rem !important;
 }
