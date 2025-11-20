@@ -150,3 +150,31 @@ textarea:focus {
   border-radius: 0.75rem !important;
   padding: 1.25rem !important;
 }
+
+/* ---------------------------------------------------------
+   COLOSIEUM POS WIDGET OVERRIDES
+   Hide age groups + location + adjust button text weight
+--------------------------------------------------------- */
+
+/* Hide age bracket on timetable cards */
+.tt-session-card .age-groups-block {
+  display: none !important;
+}
+
+/* Hide location block (uses Clava's class) */
+.tt-session-card .location-block {
+  display: none !important;
+}
+
+/* Make button text regular weight instead of bold */
+button,
+input[type="button"],
+input[type="submit"],
+[class*="btn"],
+[class*="Btn"],
+[class*="button"],
+[class*="Button"],
+[class*="cta"],
+[class*="Cta"] {
+  font-weight: 400 !important; /* was bold */
+}
