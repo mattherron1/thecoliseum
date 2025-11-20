@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6,
 [class*="Heading"] {
   font-family: var(--brand-font-heading) !important;
   color: var(--brand-text-heading) !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
 }
 
 /* ---------------------------------------------------------
