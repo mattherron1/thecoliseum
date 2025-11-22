@@ -214,29 +214,52 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   REMOVE ALL NATIVE (UGLY) BROWSER TOOLTIPS IN SESSION CARDS
+   CUSTOM BRANDED TOOLTIP ONLY ON SESSION TITLE
 --------------------------------------------------------- */
 
-/* Kill tooltip on ANY element inside session cards */
-.tt-session-card [title],
-.tt-session-card [title]:hover {
-  pointer-events: none !important;
+/* Target the element that has Clava's title attribute */
+.tt-session-card [title] {
+  position: relative;
 }
 
-/* Keep click working on card itself */
-.tt-session-card {
-  pointer-events: auto !important;
+/* Custom tooltip */
+.tt-session-card [title]:hover::after {
+  content: "Beginner session – click to book";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 9999;
+}
+
+/* Hidden by default */
+.tt-session-card [title]::after {
+  opacity: 0;
+}
+
+/* Disable browser tooltip */
+.tt-session-card [title] {
+  -webkit-touch-callout: none !important;
 }
 
 /* ---------------------------------------------------------
-   HARD REMOVE ALL TITLES INSIDE SESSION CARDS (KILLS TOOLTIP)
+   FIX: MAKE CLAVA TOOLTIP TEXT VISIBLE (WHITE TEXT)
 --------------------------------------------------------- */
 
-.tt-session-card [title] {
-  /* overwrite the browser tooltip */
-  title: "" !important;
-}
-
-.tt-session-card *[title] {
-  title: "" !important;
+[role="tooltip"],
+.tt-tooltip,
+.tooltip,
+.Tippy,
+.tippy-content,
+.tippy-box {
+  color: #ffffff !important;
 }
