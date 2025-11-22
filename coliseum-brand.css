@@ -20,7 +20,7 @@
 }
 
 /* ---------------------------------------------------------
-   GLOBAL TEXT & BACKGROUND
+   GLOBAL TEXT & BACKGROUND (extra strong selectors)
 --------------------------------------------------------- */
 
 html,
@@ -91,7 +91,7 @@ input[type="submit"],
   font-weight: 400 !important;
 }
 
-/* --- NEW: TEXT-ONLY HOVER EFFECT --- */
+/* --- UPDATED: TEXT-ONLY HOVER EFFECT (no grey filter) --- */
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
@@ -106,7 +106,7 @@ input[type="submit"]:hover,
   filter: none !important;
 }
 
-/* Secondary buttons */
+/* Secondary / subtle buttons */
 [class*="secondary"],
 [class*="Secondary"],
 [class*="ghost"],
@@ -156,7 +156,7 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   TIMETABLE DAY HEADER (DATE TABS)
+   DATE TABS (under the days)
 --------------------------------------------------------- */
 
 .tt-day-header .day-label {
@@ -172,7 +172,7 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   SESSION CARDS — HOVER BORDER (SUBTLE)
+   SESSION CARDS — SUBTLE HOVER
 --------------------------------------------------------- */
 
 .tt-session-card,
@@ -187,21 +187,21 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   FIX DATE PICKER OVERLAP
+   FIX DATE PICKER ICON OVERLAP
 --------------------------------------------------------- */
 
 .tt-date-picker input {
-  padding-left: 2.5rem !important; /* makes room for the icon */
+  padding-left: 2.5rem !important; /* spacing for icon */
 }
 
 .tt-date-picker .icon {
-  left: 0.75rem !important;       /* moves icon slightly left */
+  left: 0.75rem !important;
   top: 50% !important;
   transform: translateY(-50%);
 }
 
 /* ---------------------------------------------------------
-   COLOSIEUM POS WIDGET OVERRIDES
+   COLOSIEUM POS WIDGET OVERRIDES (KEEP THESE)
 --------------------------------------------------------- */
 
 /* Hide age bracket on timetable cards */
@@ -213,3 +213,4 @@ textarea:focus {
 .tt-session-card .location-block {
   display: none !important;
 }
+
