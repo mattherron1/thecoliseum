@@ -91,7 +91,7 @@ input[type="submit"],
   font-weight: 400 !important;
 }
 
-/* --- UPDATED: TEXT-ONLY HOVER EFFECT (no grey filter) --- */
+/* UPDATED: Text-only hover */
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
@@ -156,7 +156,7 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   DATE TABS (under the days)
+   DATE TABS (yellow day labels)
 --------------------------------------------------------- */
 
 .tt-day-header .day-label {
@@ -172,7 +172,7 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   SESSION CARDS — SUBTLE HOVER (NO LIFT)
+   SESSION CARDS — SUBTLE YELLOW BORDER HOVER
 --------------------------------------------------------- */
 
 .tt-session-card,
@@ -183,16 +183,49 @@ textarea:focus {
 .tt-session-card:hover {
   border: 2px solid var(--brand-color-primary) !important;
   cursor: pointer;
-  /* removed transform raise */
 }
 
+/* ---------------------------------------------------------
+   CUSTOM BRANDED TOOLTIP — "Click to book"
+--------------------------------------------------------- */
+
+.tt-session-card {
+  position: relative !important;
+}
+
+.tt-session-card::after {
+  content: "Click to book";
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 9999;
+}
+
+.tt-session-card:hover::after {
+  opacity: 1;
+}
+
+/* Disable default browser tooltips */
+.tt-session-card[title] {
+  -webkit-touch-callout: none !important;
+}
 
 /* ---------------------------------------------------------
    FIX DATE PICKER ICON OVERLAP
 --------------------------------------------------------- */
 
 .tt-date-picker input {
-  padding-left: 2.5rem !important; /* spacing for icon */
+  padding-left: 2.5rem !important;
 }
 
 .tt-date-picker .icon {
@@ -202,7 +235,7 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   COLOSIEUM POS WIDGET OVERRIDES (KEEP THESE)
+   COLOSIEUM POS WIDGET OVERRIDES (YOUR ORIGINAL CODE)
 --------------------------------------------------------- */
 
 /* Hide age bracket on timetable cards */
@@ -214,4 +247,3 @@ textarea:focus {
 .tt-session-card .location-block {
   display: none !important;
 }
-
