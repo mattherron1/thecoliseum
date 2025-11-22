@@ -20,7 +20,7 @@
 }
 
 /* ---------------------------------------------------------
-   GLOBAL TEXT & BACKGROUND (extra strong selectors)
+   GLOBAL TEXT & BACKGROUND
 --------------------------------------------------------- */
 
 html,
@@ -88,9 +88,10 @@ input[type="submit"],
   border-radius: 999px !important;
   padding: 0.75rem 1.5rem !important;
   cursor: pointer;
-  font-weight: 400 !important; /* made regular instead of bold */
+  font-weight: 400 !important;
 }
 
+/* --- NEW: TEXT-ONLY HOVER EFFECT --- */
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
@@ -100,10 +101,12 @@ input[type="submit"]:hover,
 [class*="Button"]:hover,
 [class*="cta"]:hover,
 [class*="Cta"]:hover {
-  filter: brightness(0.9) !important;
+  color: #ffffff !important;
+  background-color: var(--brand-color-primary) !important;
+  filter: none !important;
 }
 
-/* Secondary / subtle buttons */
+/* Secondary buttons */
 [class*="secondary"],
 [class*="Secondary"],
 [class*="ghost"],
@@ -153,14 +156,59 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
+   TIMETABLE DAY HEADER (DATE TABS)
+--------------------------------------------------------- */
+
+.tt-day-header .day-label {
+  background-color: var(--brand-color-primary) !important;
+  color: #1d1d1b !important;
+  border-radius: 12px !important;
+  padding: 0.35rem 0.75rem !important;
+}
+
+.tt-day-header.selected .day-label {
+  background-color: var(--brand-color-primary) !important;
+  color: #1d1d1b !important;
+}
+
+/* ---------------------------------------------------------
+   SESSION CARDS — HOVER BORDER (SUBTLE)
+--------------------------------------------------------- */
+
+.tt-session-card,
+.tt-session-card * {
+  transition: all 0.2s ease-in-out !important;
+}
+
+.tt-session-card:hover {
+  border: 2px solid var(--brand-color-primary) !important;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------
+   FIX DATE PICKER OVERLAP
+--------------------------------------------------------- */
+
+.tt-date-picker input {
+  padding-left: 2.5rem !important; /* makes room for the icon */
+}
+
+.tt-date-picker .icon {
+  left: 0.75rem !important;       /* moves icon slightly left */
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+/* ---------------------------------------------------------
    COLOSIEUM POS WIDGET OVERRIDES
-   Hide age groups + location + adjust button text weight
 --------------------------------------------------------- */
 
 /* Hide age bracket on timetable cards */
 .tt-session-card .age-groups-block {
   display: none !important;
 }
+
 /* Hide location block */
 .tt-session-card .location-block {
   display: none !important;
