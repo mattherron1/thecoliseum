@@ -186,41 +186,6 @@ textarea:focus {
 }
 
 /* ---------------------------------------------------------
-   CUSTOM BRANDED TOOLTIP — "Click to book"
---------------------------------------------------------- */
-
-.tt-session-card {
-  position: relative !important;
-}
-
-.tt-session-card::after {
-  content: "Click to book";
-  position: absolute;
-  bottom: -32px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.85);
-  color: #ffffff;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  z-index: 9999;
-}
-
-.tt-session-card:hover::after {
-  opacity: 1;
-}
-
-/* Disable default browser tooltips */
-.tt-session-card[title] {
-  -webkit-touch-callout: none !important;
-}
-
-/* ---------------------------------------------------------
    FIX DATE PICKER ICON OVERLAP
 --------------------------------------------------------- */
 
@@ -246,4 +211,42 @@ textarea:focus {
 /* Hide location block */
 .tt-session-card .location-block {
   display: none !important;
+}
+
+/* ---------------------------------------------------------
+   CUSTOM BRANDED TOOLTIP ONLY ON SESSION TITLE
+--------------------------------------------------------- */
+
+/* Target the element that has Clava's title attribute */
+.tt-session-card [title] {
+  position: relative;
+}
+
+/* Custom tooltip */
+.tt-session-card [title]:hover::after {
+  content: "Beginner session – click to book";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 9999;
+}
+
+/* Hidden by default */
+.tt-session-card [title]::after {
+  opacity: 0;
+}
+
+/* Disable browser tooltip */
+.tt-session-card [title] {
+  -webkit-touch-callout: none !important;
 }
