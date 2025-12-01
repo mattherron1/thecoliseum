@@ -1,265 +1,28 @@
-/* ---------------------------------------------------------
-   COLOSIEUM BRAND STYLESHEET
-   Hosted via GitHub/jsDelivr and used by POS as external CSS
---------------------------------------------------------- */
+/* ===========================
+   THE COLISEUM – CUSTOM STYLES
+   =========================== */
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap');
-
-/* Brand variables */
-:root {
-  --brand-color-primary: #FFD200;
-  --brand-color-secondary: #E8EEE4;
-  --brand-bg: #F5F8F3;
-  --brand-text-body: #1d1d1b;
-  --brand-text-heading: #1d1d1b;
-
-  --brand-font-heading: "Fjalla One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --brand-font-body: "Albert Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* Background colour for body */
+body {
+    background-color: #f5f8f3;
 }
 
-/* ---------------------------------------------------------
-   GLOBAL TEXT & BACKGROUND (extra strong selectors)
---------------------------------------------------------- */
-
-html,
-body,
-body * {
-  font-family: var(--brand-font-body) !important;
-  color: var(--brand-text-body) !important;
+/* Primary Button Style */
+.primary-btn {
+    background-color: #FFD200;    /* Coliseum Yellow */
+    color: #000000;               /* Default text colour */
+    font-family: 'Fjalla One', sans-serif;
+    padding: 12px 22px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease-in-out;
 }
 
-html,
-body,
-main,
-[class*="page"],
-[class*="Page"],
-[class*="container"],
-[class*="Container"] {
-  background-color: var(--brand-bg) !important;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6,
-[class*="title"],
-[class*="Title"],
-[class*="heading"],
-[class*="Heading"] {
-  font-family: var(--brand-font-heading) !important;
-  color: var(--brand-text-heading) !important;
-  font-weight: 400 !important;
-}
-
-/* ---------------------------------------------------------
-   LINKS
---------------------------------------------------------- */
-
-a,
-a span {
-  color: var(--brand-color-primary) !important;
-  text-decoration: none !important;
-}
-
-a:hover,
-a:hover span {
-  text-decoration: underline !important;
-}
-
-/* ---------------------------------------------------------
-   BUTTONS & CTAs
---------------------------------------------------------- */
-
-button,
-input[type="button"],
-input[type="submit"],
-[class*="btn"],
-[class*="Btn"],
-[class*="button"],
-[class*="Button"],
-[class*="cta"],
-[class*="Cta"] {
-  font-family: var(--brand-font-heading) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  background-color: var(--brand-color-primary) !important;
-  color: #1d1d1b !important;
-  border: none !important;
-  border-radius: 999px !important;
-  padding: 0.75rem 1.5rem !important;
-  cursor: pointer;
-  font-weight: 400 !important;
-}
-
-/* UPDATED: Text-only hover */
-button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-[class*="btn"]:hover,
-[class*="Btn"]:hover,
-[class*="button"]:hover,
-[class*="Button"]:hover,
-[class*="cta"]:hover,
-[class*="Cta"]:hover {
-  color: #ffffff !important;
-  background-color: var(--brand-color-primary) !important;
-  filter: none !important;
-}
-
-/* Secondary / subtle buttons */
-[class*="secondary"],
-[class*="Secondary"],
-[class*="ghost"],
-[class*="Ghost"] {
-  background-color: var(--brand-color-secondary) !important;
-  color: var(--brand-text-body) !important;
-}
-
-/* ---------------------------------------------------------
-   FORMS
---------------------------------------------------------- */
-
-input,
-select,
-textarea {
-  background-color: #ffffff !important;
-  border: 1px solid var(--brand-color-secondary) !important;
-  color: var(--brand-text-body) !important;
-  padding: 0.5rem 0.75rem !important;
-  border-radius: 0.4rem !important;
-  font-family: var(--brand-font-body) !important;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid var(--brand-color-primary) !important;
-  outline-offset: 1px;
-}
-
-/* ---------------------------------------------------------
-   CARDS / PANELS
---------------------------------------------------------- */
-
-.card,
-.panel,
-[class*="card"],
-[class*="Card"],
-[class*="panel"],
-[class*="Panel"],
-[class*="box"],
-[class*="Box"] {
-  background-color: #ffffff !important;
-  border: 1px solid var(--brand-color-secondary) !important;
-  border-radius: 0.75rem !important;
-  padding: 1.25rem !important;
-}
-
-/* ---------------------------------------------------------
-   DATE TABS (yellow day labels)
---------------------------------------------------------- */
-
-.tt-day-header .day-label {
-  background-color: var(--brand-color-primary) !important;
-  color: #1d1d1b !important;
-  border-radius: 12px !important;
-  padding: 0.35rem 0.75rem !important;
-}
-
-.tt-day-header.selected .day-label {
-  background-color: var(--brand-color-primary) !important;
-  color: #1d1d1b !important;
-}
-
-/* ---------------------------------------------------------
-   SESSION CARDS — SUBTLE YELLOW BORDER HOVER
---------------------------------------------------------- */
-
-.tt-session-card,
-.tt-session-card * {
-  transition: all 0.2s ease-in-out !important;
-}
-
-.tt-session-card:hover {
-  border: 2px solid var(--brand-color-primary) !important;
-  cursor: pointer;
-}
-
-/* ---------------------------------------------------------
-   FIX DATE PICKER ICON OVERLAP
---------------------------------------------------------- */
-
-.tt-date-picker input {
-  padding-left: 2.5rem !important;
-}
-
-.tt-date-picker .icon {
-  left: 0.75rem !important;
-  top: 50% !important;
-  transform: translateY(-50%);
-}
-
-/* ---------------------------------------------------------
-   COLOSIEUM POS WIDGET OVERRIDES (YOUR ORIGINAL CODE)
---------------------------------------------------------- */
-
-/* Hide age bracket on timetable cards */
-.tt-session-card .age-groups-block {
-  display: none !important;
-}
-
-/* Hide location block */
-.tt-session-card .location-block {
-  display: none !important;
-}
-
-/* ---------------------------------------------------------
-   CUSTOM BRANDED TOOLTIP ONLY ON SESSION TITLE
---------------------------------------------------------- */
-
-/* Target the element that has Clava's title attribute */
-.tt-session-card [title] {
-  position: relative;
-}
-
-/* Custom tooltip */
-.tt-session-card [title]:hover::after {
-  content: "Beginner session – click to book";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.85);
-  color: #ffffff;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out;
-  z-index: 9999;
-}
-
-/* Hidden by default */
-.tt-session-card [title]::after {
-  opacity: 0;
-}
-
-/* Disable browser tooltip */
-.tt-session-card [title] {
-  -webkit-touch-callout: none !important;
-}
-
-/* ---------------------------------------------------------
-   FIX: MAKE CLAVA TOOLTIP TEXT VISIBLE (WHITE TEXT)
---------------------------------------------------------- */
-
-[role="tooltip"],
-.tt-tooltip,
-.tooltip,
-.Tippy,
-.tippy-content,
-.tippy-box {
-  color: #ffffff !important;
+/* Hover State */
+.primary-btn:hover {
+    color: #FFFFFF;               /* Turn text white */
+    background-color: #FFD200;    /* Stay same yellow */
 }
