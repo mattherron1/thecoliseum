@@ -26,3 +26,14 @@ body {
     color: #FFFFFF;               /* Turn text white */
     background-color: #FFD200;    /* Stay same yellow */
 }
+
+/* ===========================
+   TIMETABLE WIDGET TWEAKS
+   Hide unwanted blocks
+   =========================== */
+
+.tt-session-card,
+.location-block,
+.age-groups-block {
+    display: none !important;
+}
