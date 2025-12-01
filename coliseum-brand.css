@@ -32,8 +32,4 @@ body {
    Hide unwanted blocks
    =========================== */
 
-.tt-session-card,
-.location-block,
-.age-groups-block {
-    display: none !important;
-}
+.tt-session-card .age-groups-block { display:none; }
